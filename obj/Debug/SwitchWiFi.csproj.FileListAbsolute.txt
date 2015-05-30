@@ -1,0 +1,10 @@
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\bin\Debug\SwitchWiFi.exe.config
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\bin\Debug\SwitchWiFi.exe
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\bin\Debug\SwitchWiFi.pdb
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.Form1.resources
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.Properties.Resources.resources
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.csproj.GenerateResource.Cache
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.exe
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.pdb
+d:\Documents\Visual Studio 2013\Projects\SwitchWiFi\SwitchWiFi\bin\Debug\SwitchWiFi.exe.CodeAnalysisLog.xml
+d:\Documents\Visual Studio 2013\Projects\SwitchWiFi\SwitchWiFi\bin\Debug\SwitchWiFi.exe.lastcodeanalysissucceeded
