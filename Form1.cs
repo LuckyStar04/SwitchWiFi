@@ -75,7 +75,7 @@ namespace SwitchWiFi
                     }
                     break;
                 case true:
-                        ntfOpenWiFi.ShowBalloonTip(1, "Wi-Fi 发射", "发射已关闭。", ToolTipIcon.Info); break;
+                        ntfOpenWiFi.ShowBalloonTip(1, "Wi-Fi 发射", "发射已打开。", ToolTipIcon.Info); break;
             }
         }
 
@@ -84,7 +84,7 @@ namespace SwitchWiFi
             switch (ButtonStatus)
             {
                 case false:
-                        ntfOpenWiFi.ShowBalloonTip(1, "Wi-Fi 发射", "发射已打开。", ToolTipIcon.Info); break;
+                        ntfOpenWiFi.ShowBalloonTip(1, "Wi-Fi 发射", "发射已关闭。", ToolTipIcon.Info); break;
                 case true:
                     {
                         status = c.execute("netsh wlan stop hostednetwork");
@@ -194,8 +194,8 @@ namespace SwitchWiFi
         {
             switch (this.Visible)
             {
-                case true: timer1.Start(); break;
-                case false: timer1.Stop(); break;
+                case true: timer1.Interval = 1000; break;
+                case false: timer1.Interval = 600000; break;
             }
         }
 
@@ -246,6 +246,13 @@ namespace SwitchWiFi
         private void label3_MouseLeave(object sender, EventArgs e)
         {
             label3.ForeColor = Color.White;
+        }
+
+        private void ntfOpenWiFi_BalloonTipClicked(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.Activate();
         }
     }
 }

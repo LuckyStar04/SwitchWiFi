@@ -6,5 +6,4 @@ d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchW
 d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.csproj.GenerateResource.Cache
 d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.exe
 d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.pdb
-d:\Documents\Visual Studio 2013\Projects\SwitchWiFi\SwitchWiFi\bin\Debug\SwitchWiFi.exe.CodeAnalysisLog.xml
-d:\Documents\Visual Studio 2013\Projects\SwitchWiFi\SwitchWiFi\bin\Debug\SwitchWiFi.exe.lastcodeanalysissucceeded
+d:\documents\visual studio 2013\Projects\SwitchWiFi\SwitchWiFi\obj\Debug\SwitchWiFi.csprojResolveAssemblyReference.cache

@@ -54,31 +54,31 @@
             this.toolStripSeparator1,
             this.Item_Exit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 76);
             // 
             // Item_Launch
             // 
             this.Item_Launch.Name = "Item_Launch";
-            this.Item_Launch.Size = new System.Drawing.Size(152, 22);
+            this.Item_Launch.Size = new System.Drawing.Size(124, 22);
             this.Item_Launch.Text = "信号发射";
             this.Item_Launch.Click += new System.EventHandler(this.Item_Launch_Click);
             // 
             // Item_Shutdown
             // 
             this.Item_Shutdown.Name = "Item_Shutdown";
-            this.Item_Shutdown.Size = new System.Drawing.Size(152, 22);
+            this.Item_Shutdown.Size = new System.Drawing.Size(124, 22);
             this.Item_Shutdown.Text = "关闭发射";
             this.Item_Shutdown.Click += new System.EventHandler(this.Item_Shutdown_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
             // 
             // Item_Exit
             // 
             this.Item_Exit.Name = "Item_Exit";
-            this.Item_Exit.Size = new System.Drawing.Size(152, 22);
+            this.Item_Exit.Size = new System.Drawing.Size(124, 22);
             this.Item_Exit.Text = "退出";
             this.Item_Exit.Click += new System.EventHandler(this.Item_Exit_Click);
             // 
@@ -87,6 +87,7 @@
             this.ntfOpenWiFi.ContextMenuStrip = this.contextMenuStrip1;
             this.ntfOpenWiFi.Text = "Wi-Fi 发射";
             this.ntfOpenWiFi.Visible = true;
+            this.ntfOpenWiFi.BalloonTipClicked += new System.EventHandler(this.ntfOpenWiFi_BalloonTipClicked);
             this.ntfOpenWiFi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ntfOpenWiFi_MouseDoubleClick);
             // 
             // label1
