@@ -16,8 +16,8 @@ namespace SwitchWiFi
         private cmd c = new cmd();
         private string status;
 
+        #region ButtonStatus
         private bool buttonstatus;
-        #region buttonstatus
         private bool ButtonStatus
         {
             get
@@ -55,11 +55,7 @@ namespace SwitchWiFi
 
         private bool registersuccess;
 
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
+        #region NotifyIcon
         private void Item_Launch_Click(object sender, EventArgs e)
         {
             switch (ButtonStatus)
@@ -103,6 +99,36 @@ namespace SwitchWiFi
             if (MessageBox.Show("确定退出吗？", "Wi-Fi发射控制台", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) Application.Exit();
         }
 
+        private void ntfOpenWiFi_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.Hide();
+            }
+            else if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                this.Activate();
+            }
+        }
+
+        private void ntfOpenWiFi_BalloonTipClicked(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.Activate();
+        }
+        #endregion
+
+        #region Form&System
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             registersuccess = false;
@@ -134,62 +160,6 @@ namespace SwitchWiFi
             }
         }
 
-        private void ntfOpenWiFi_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Minimized;
-                this.Hide();
-            }
-            else if (this.WindowState == FormWindowState.Minimized)
-            {
-                this.Show();
-                this.WindowState = FormWindowState.Normal;
-                this.Activate();
-            }
-        }
-
-        private void btnSwitch_Click(object sender, EventArgs e)
-        {
-            switch (ButtonStatus)
-            {
-                case false:
-                    {
-                        status = c.execute("netsh wlan start hostednetwork");
-                        if (status.Contains("已启动"))
-                        {
-                            ntfOpenWiFi.ShowBalloonTip(1, "Wi-Fi 发射", "发射已打开。", ToolTipIcon.Info);
-                            ButtonStatus = true;
-                        }
-                    }
-                    break;
-                case true:
-                    {
-                        status = c.execute("netsh wlan stop hostednetwork");
-                        if (status.Contains("已停止"))
-                        {
-                            ntfOpenWiFi.ShowBalloonTip(1, "Wi-Fi 发射", "发射已关闭。", ToolTipIcon.Info);
-                            ButtonStatus = false;
-                        }
-                    }
-                    break;
-            }
-        }
-
-        private void ReadStatus()
-        {
-            status = c.execute("netsh wlan show hostednetwork");
-            if (status.Contains("已启动"))
-                ButtonStatus = true;
-            else
-                ButtonStatus = false;
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            ReadStatus();
-        }
-
         private void Form1_VisibleChanged(object sender, EventArgs e)
         {
             switch (this.Visible)
@@ -204,7 +174,6 @@ namespace SwitchWiFi
             this.WindowState = FormWindowState.Minimized;
             this.Hide();
         }
-
 
         protected override void WndProc(ref Message m)
         {
@@ -233,6 +202,48 @@ namespace SwitchWiFi
             UnregisterHotKey(this.Handle, 53812);
         }
 
+        private void btnSwitch_Click(object sender, EventArgs e)
+        {
+            switch (ButtonStatus)
+            {
+                case false:
+                    {
+                        status = c.execute("netsh wlan start hostednetwork");
+                        if (status.Contains("已启动"))
+                        {
+                            ntfOpenWiFi.ShowBalloonTip(1, "Wi-Fi 发射", "发射已打开。", ToolTipIcon.Info);
+                            ButtonStatus = true;
+                        }
+                    }
+                    break;
+                case true:
+                    {
+                        status = c.execute("netsh wlan stop hostednetwork");
+                        if (status.Contains("已停止"))
+                        {
+                            ntfOpenWiFi.ShowBalloonTip(1, "Wi-Fi 发射", "发射已关闭。", ToolTipIcon.Info);
+                            ButtonStatus = false;
+                        }
+                    }
+                    break;
+            }
+        }
+        #endregion
+
+        private void ReadStatus()
+        {
+            status = c.execute("netsh wlan show hostednetwork");
+            if (status.Contains("已启动"))
+                ButtonStatus = true;
+            else
+                ButtonStatus = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ReadStatus();
+        }
+
         private void label3_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(this, "确定退出吗？", "Wi-Fi发射控制台", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) Application.Exit();
@@ -248,11 +259,19 @@ namespace SwitchWiFi
             label3.ForeColor = Color.White;
         }
 
-        private void ntfOpenWiFi_BalloonTipClicked(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-            this.Show();
-            this.WindowState = FormWindowState.Normal;
-            this.Activate();
+
+        }
+
+        private void label4_MouseEnter(object sender, EventArgs e)
+        {
+            label4.ForeColor = Color.SteelBlue;
+        }
+
+        private void label4_MouseLeave(object sender, EventArgs e)
+        {
+            label4.ForeColor = Color.White;
         }
     }
 }
