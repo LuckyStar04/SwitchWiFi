@@ -1,0 +1,26 @@
+[
+    {
+        "id": "395da222-bad2-440f-8d9c-879d7dab6361",
+        "companyName": "Microsoft"
+    },
+    {
+        "id": "9031582f-b14a-4360-8713-ab7983d3943d",
+        "companyName": "Google"
+    },
+    {
+        "id": "7dfd0068-07e1-4cd7-9f08-5edaf7df0f9e",
+        "companyName": "Alipapa"
+    },
+    {
+        "id": "c454057c-8c4f-407d-bc5b-9ad7d564b56d",
+        "companyName": "Facebook"
+    },
+    {
+        "id": "14f5a564-96b1-4bf2-8258-8e0b38104547",
+        "companyName": "Twitter"
+    },
+    {
+        "id": "e8d7f025-536b-4695-8f06-f244e49de897",
+        "companyName": "SpaceX"
+    }
+]
